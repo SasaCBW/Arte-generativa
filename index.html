@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101b1b">
+  <title>Arte Generativa | Jardim Digital</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">
+      <span class="brand-icon">✳</span>
+      <span>JARDIM<span class="brand-light"> DIGITAL</span></span>
+    </a>
+    <span class="top-label">LABORATÓRIO DE ARTE GENERATIVA</span>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <div class="eyebrow"><span></span> PROGRAMAÇÃO CRIATIVA</div>
+      <h1>A natureza também<br>pode ser <em>programada.</em></h1>
+      <p>
+        Crie árvores únicas usando algoritmos, padrões e aleatoriedade.
+        Cada composição é uma obra diferente.
+      </p>
+    </section>
+
+    <section class="workspace">
+      <div class="art-panel">
+        <div class="panel-heading">
+          <div>
+            <span class="small-label">SUA OBRA</span>
+            <h2 id="artTitle">Árvore nº 001</h2>
+          </div>
+          <span class="live-indicator"><span></span> COMPOSIÇÃO GERADA</span>
+        </div>
+
+        <div class="canvas-wrap">
+          <canvas id="artCanvas" width="1000" height="650">
+            Seu navegador não suporta o elemento canvas.
+          </canvas>
+          <div class="canvas-caption">JARDIM DIGITAL · ARTE CRIADA POR CÓDIGO</div>
+        </div>
+
+        <div class="art-footer">
+          <div class="stat">
+            <span class="stat-number" id="branchCount">0</span>
+            <span class="stat-label">GALHOS</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number" id="leafCount">0</span>
+            <span class="stat-label">FOLHAS</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number" id="fruitCount">0</span>
+            <span class="stat-label">FRUTOS</span>
+          </div>
+          <div class="art-actions">
+            <button class="button button-secondary" id="downloadBtn">↓ Salvar imagem</button>
+            <button class="button button-primary" id="generateBtn">✳ Nova árvore</button>
+          </div>
+        </div>
+      </div>
+
+      <aside class="controls">
+        <div class="controls-heading">
+          <span class="small-label">PAINEL DE CRIAÇÃO</span>
+          <h2>Personalize sua arte</h2>
+          <p>Altere os parâmetros e observe como a natureza se transforma.</p>
+        </div>
+
+        <div class="control-group">
+          <div class="control-title">
+            <label for="angleRange">Abertura dos galhos</label>
+            <output id="angleValue">27°</output>
+          </div>
+          <input id="angleRange" type="range" min="12" max="48" value="27">
+          <div class="range-labels"><span>Fechada</span><span>Espalhada</span></div>
+        </div>
+
+        <div class="control-group">
+          <div class="control-title">
+            <label for="depthRange">Complexidade</label>
+            <output id="depthValue">8 níveis</output>
+          </div>
+          <input id="depthRange" type="range" min="4" max="10" value="8">
+          <div class="range-labels"><span>Simples</span><span>Detalhada</span></div>
+        </div>
+
+        <div class="control-group">
+          <div class="control-title">
+            <label for="leafRange">Quantidade de folhas</label>
+            <output id="leafValue">70%</output>
+          </div>
+          <input id="leafRange" type="range" min="20" max="100" value="70">
+          <div class="range-labels"><span>Menos folhas</span><span>Mais folhas</span></div>
+        </div>
+
+        <div class="control-group">
+          <label for="paletteSelect">Paleta da natureza</label>
+          <select id="paletteSelect">
+            <option value="forest">Verde floresta</option>
+            <option value="autumn">Outono dourado</option>
+            <option value="tropical">Verde tropical</option>
+            <option value="lavender">Jardim lilás</option>
+          </select>
+        </div>
+
+        <div class="control-group toggle-group">
+          <div>
+            <label for="fruitToggle">Adicionar frutos</label>
+            <span class="control-description">Pequenos detalhes na árvore</span>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="fruitToggle" checked>
+            <span class="switch-slider"></span>
+          </label>
+        </div>
+
+        <button class="button button-primary full-button" id="applyBtn">
+          Aplicar configurações
+        </button>
+
+        <div class="tip">
+          <span class="tip-icon">✦</span>
+          <div>
+            <strong>Experimente!</strong>
+            <p>Uma pequena mudança no ângulo ou na complexidade pode criar uma árvore completamente diferente.</p>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="about">
+      <div class="about-symbol">✳</div>
+      <div>
+        <span class="small-label">COMO FUNCIONA</span>
+        <h2>Arte feita de algoritmos</h2>
+        <p>
+          A arte generativa utiliza instruções programadas para criar imagens.
+          Neste projeto, cada galho é construído a partir de ramificações,
+          enquanto a aleatoriedade modifica pequenos detalhes da composição.
+          O resultado é uma árvore que nunca precisa ser exatamente igual à anterior.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <span>JARDIM DIGITAL</span>
+      <span>Um projeto de programação criativa</span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
