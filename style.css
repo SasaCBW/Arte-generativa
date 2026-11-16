@@ -1,0 +1,508 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap');
+
+:root {
+  --background: #101b1b;
+  --surface: #182625;
+  --surface-light: #20322f;
+  --text: #f2f0e8;
+  --muted: #a4b2a7;
+  --accent: #b5d49a;
+  --accent-dark: #263b2e;
+  --border: rgba(224, 239, 219, 0.12);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 50% -20%, #29423a 0%, transparent 50%),
+    var(--background);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+}
+
+button, input, select {
+  font: inherit;
+}
+
+.topbar {
+  height: 76px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.brand-icon {
+  color: var(--accent);
+  font-size: 27px;
+}
+
+.brand-light {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.top-label, .small-label {
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.container {
+  width: min(1420px, 88%);
+  margin: 0 auto;
+}
+
+.intro {
+  padding: 65px 0 43px;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.eyebrow span, .live-indicator span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: inline-block;
+}
+
+.intro h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(39px, 5vw, 64px);
+  line-height: 1.08;
+  font-weight: 500;
+  letter-spacing: -1.5px;
+}
+
+.intro h1 em {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.intro p {
+  color: var(--muted);
+  max-width: 510px;
+  line-height: 1.8;
+  font-size: 14px;
+  margin-top: 19px;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1.75fr) minmax(280px, 0.8fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.art-panel, .controls {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.panel-heading {
+  padding: 23px 25px 19px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.panel-heading h2, .controls h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+  font-weight: 500;
+  margin-top: 6px;
+}
+
+.live-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+
+.live-indicator span {
+  width: 6px;
+  height: 6px;
+}
+
+.canvas-wrap {
+  position: relative;
+  width: 100%;
+  background: #d7e5d1;
+  overflow: hidden;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1000 / 650;
+}
+
+.canvas-caption {
+  position: absolute;
+  bottom: 14px;
+  left: 17px;
+  color: rgba(30, 55, 43, 0.65);
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+}
+
+.art-footer {
+  min-height: 91px;
+  padding: 17px 23px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 48px;
+}
+
+.stat-number {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.stat-label {
+  color: var(--muted);
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+
+.art-actions {
+  margin-left: auto;
+  display: flex;
+  gap: 9px;
+}
+
+.button {
+  border: 0;
+  border-radius: 7px;
+  padding: 12px 15px;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 700;
+  transition: 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.button-primary {
+  color: #14221a;
+  background: var(--accent);
+}
+
+.button-secondary {
+  color: var(--text);
+  background: var(--surface-light);
+  border: 1px solid var(--border);
+}
+
+.controls {
+  padding: 25px;
+}
+
+.controls-heading {
+  margin-bottom: 29px;
+}
+
+.controls-heading h2 {
+  font-size: 24px;
+}
+
+.controls-heading p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+  margin-top: 9px;
+}
+
+.control-group {
+  padding: 18px 0;
+  border-top: 1px solid var(--border);
+}
+
+.control-group > label, .control-title label {
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.control-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.control-title output {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+input[type="range"] {
+  width: 100%;
+  margin: 17px 0 9px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.range-labels {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 9px;
+}
+
+select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  color: var(--text);
+  background: var(--surface-light);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+}
+
+.toggle-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggle-group > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.control-description {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 39px;
+  height: 22px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch-slider {
+  position: absolute;
+  inset: 0;
+  background: #46534b;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.switch-slider::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 3px;
+  top: 3px;
+  border-radius: 50%;
+  background: white;
+  transition: 0.2s;
+}
+
+.switch input:checked + .switch-slider {
+  background: #8cae78;
+}
+
+.switch input:checked + .switch-slider::before {
+  transform: translateX(17px);
+}
+
+.full-button {
+  width: 100%;
+  margin-top: 7px;
+  padding: 14px;
+}
+
+.tip {
+  display: flex;
+  gap: 12px;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 8px;
+  background: rgba(181, 212, 154, 0.08);
+  border: 1px solid rgba(181, 212, 154, 0.13);
+}
+
+.tip-icon {
+  color: var(--accent);
+  font-size: 19px;
+}
+
+.tip strong {
+  font-size: 11px;
+  color: var(--accent);
+}
+
+.tip p {
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.7;
+  margin-top: 5px;
+}
+
+.about {
+  display: flex;
+  gap: 23px;
+  align-items: flex-start;
+  max-width: 790px;
+  padding: 75px 0 65px;
+}
+
+.about-symbol {
+  color: var(--accent);
+  font-size: 42px;
+}
+
+.about h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 29px;
+  font-weight: 500;
+  margin: 7px 0 12px;
+}
+
+.about p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 23px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+@media (max-width: 950px) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 22px;
+  }
+
+  .controls-heading, .tip, .full-button {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .topbar {
+    padding: 0 6%;
+  }
+
+  .top-label {
+    display: none;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  .intro {
+    padding: 45px 0 30px;
+  }
+
+  .controls {
+    display: block;
+    padding: 20px;
+  }
+
+  .panel-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .art-footer {
+    gap: 17px;
+  }
+
+  .art-actions {
+    width: 100%;
+    margin: 5px 0 0;
+  }
+
+  .art-actions .button {
+    flex: 1;
+  }
+
+  .about {
+    padding: 50px 0;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+}
